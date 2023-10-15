@@ -61,6 +61,7 @@
         #cardlateralnav {
             margin-top: 20px;
             background-color: whitesmoke;
+            border: none;
         }
 
         p.card-text {
@@ -77,23 +78,31 @@
     <!-- LAYOUT: HEADER -->
 
     <!-- SECTION: Title -->
-    <header class="jumbotron mt-0 ml-0" style="padding: 20px;">
+    <header class="jumbotron mt-0 ml-0" style="margin-top: 20px;">
         <nav class="navbar navbar-expand-sm">
-            <div class="container-fluid">
+            <div class="col-sm-3" style="margin-left: 20px;">
                 <h1>ArbiFut Inc. Shop</h1>
+            </div>
+
+            <div class="col-sm-3" style="margin-left: -80px;">
                 <form class="d-flex form-inline" role="search">
-                    <input class="form-control me-3" type="search" name="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <input class="form-control me-4" type="search" name="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success bg-white" type="submit">Buscar</button>
                 </form>
             </div>
-            <div class="container-fluid">
+
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-1" style="padding-left: 120px;">
                 <a class="icon-link" href="#"> Autenticación </a>
             </div>
-            <div class="container-fluid">
-                <i class="bi bi-cart"></i>
+            <div class="col-sm-1" style="padding-left: 120px;">
+                <img src="img/shoppingcart.png" style="width: 50px; height: 50px;">
             </div>
+
         </nav>
     </header>
+
 
 
 
@@ -101,8 +110,8 @@
         <div class="col-sm-9">
             <h3 style="margin-top: 20px;"> Ofertas del día </h3>
             <div class="row">
-                <div class="col-sm-3 card card-body" id="cards">
-                    <img class="card-img-top" src="img/Brazalete.jpg">
+                <div class="col-sm-2 card card-body" id="cards">
+                    <a href="#"><img class="card-img-top" src="img/Brazalete.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title">Brazalete</h4>
                         <p class="card-subtitle">Brazalete oficial de capitán.<br><br></p>
@@ -110,8 +119,8 @@
                         <p class="card-text">Ahora: 3.50€</p>
                     </div>
                 </div>
-                <div class="col-sm-3 card card-body" id="cards">
-                    <img class="card-img-top" src="img/Spray.jpg">
+                <div class="col-sm-2 card card-body" id="cards">
+                    <a href="#"><img class="card-img-top" src="img/Spray.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title">Spray Árbitro</h4>
                         <p class="card-subtitle">Spray que respeta el crecimiento del césped natural.<br><br></p>
@@ -119,8 +128,8 @@
                         <p class="card-text">Ahora: 6.40€</p>
                     </div>
                 </div>
-                <div class="col-sm-3 card card-body" id="cards">
-                    <img class="card-img-top" src="img/Toalla.jpg">
+                <div class="col-sm-2 card card-body" id="cards">
+                    <a href="#"><img class="card-img-top" src="img/Toalla.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title">Toalla</h4>
                         <p class="card-subtitle">Toalla de viaje, para cada fin de semana.<br><br></p>
@@ -128,8 +137,8 @@
                         <p class="card-text">Ahora: 12.00€</p>
                     </div>
                 </div>
-                <div class="col-sm-3 card card-body" id="cards">
-                    <img class="card-img-top" src="img/Tarjetas.jpg">
+                <div class="col-sm-2 card card-body" id="cards">
+                    <a href="#"><img class="card-img-top" src="img/Tarjetas.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title">Pack Tarjetas</h4>
                         <p class="card-subtitle">Tarjetas personalizadas para amonestar y expulsar
@@ -142,24 +151,24 @@
 
             <h4 style="margin-top: 20px;"> Nuevos productos </h4>
             <div class="row">
-                <div class="col-sm-4 card card-body" id="cards">
-                    <img class="card-img-top" src="img/BalonAdidas.jpg">
+                <div class="col-sm-2 card card-body" id="cards">
+                    <a href="#"><img class="card-img-top" src="img/BalonAdidas.jpg"></a>
                     <div class="card-body">
                         <h5 class="card-title">Balón Adidas</h5>
                         <p class="card-subtitle">Balón de fútbol 11 Adidas.<br><br></p>
                         <p class="card-text">24.00€</p>
                     </div>
                 </div>
-                <div class="col-sm-4 card card-body" id="cards">
-                    <img class="card-img-top" src="img/banderinesi.jpg">
+                <div class="col-sm-2 card card-body" id="cards">
+                    <a href="#"><img class="card-img-top" src="img/banderinesi.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title">Banderines</h4>
                         <p class="card-subtitle">Banderines para árbitros asistentes.<br><br></p>
                         <p class="card-text">40.00€</p>
                     </div>
                 </div>
-                <div class="col-sm-4 card card-body" id="cards">
-                    <img class="card-img-top" src="img/Bidon.jpg">
+                <div class="col-sm-2 card card-body" id="cards">
+                    <a href="#"><img class="card-img-top" src="img/Bidon.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title">Bidón</h4>
                         <p class="card-subtitle">Bidón Nike para sesiones de alta intensidad.<br><br></p>
@@ -170,31 +179,34 @@
         </div>
 
 
-
         <div class="col-sm-2 sidenav" id="sidenavlateral" style="margin-top: 20px; margin-left: 145px;">
             <h2>Más vendido</h2>
             <div class="card card-body" id="cardlateralnav">
                 <h4 class="card-title">1º
-                    <img class="card-img-top" id="imgcardnav" src="img/reloj-spintso-s1-.jpg">
+                    <a href="#"><img class="card-img-top" id="imgcardnav" src="img/reloj-spintso-s1-.jpg"></a>
                 </h4>
             </div>
             <div class="card card-body" id="cardlateralnav">
                 <h4 class="card-title">2º
-                    <img class="card-img-top" id="imgcardnav" src="img/Gafas.jpg">
+                    <a href="#"><img class="card-img-top" id="imgcardnav" src="img/Gafas.jpg"></a>
                 </h4>
             </div>
             <div class="card card-body" id="cardlateralnav">
                 <h4 class="card-title">3º
-                    <img class="card-img-top" id="imgcardnav" src="img/Espinilleras.jpg">
+                    <a href="#"><img class="card-img-top" id="imgcardnav" src="img/Espinilleras.jpg"></a>
                 </h4>
             </div>
             <div class="card card-body" id="cardlateralnav">
                 <h4 class="card-title">4º
-                    <img class="card-img-top" id="imgcardnav" src="img/guantesAbrigo.jpg">
+                    <a href="#"><img class="card-img-top" id="imgcardnav" src="img/guantesAbrigo.jpg"></a>
                 </h4>
+            </div>
+            <div class="card card-body" id="cardlateralnav" style="border: none;">
+                <a href="#" class="btn btn-primary">Ver más artículos</a>
             </div>
         </div>
     </div>
+
 
 
 
@@ -233,11 +245,7 @@
                 <h5>Contacto</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Atención al cliente</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Twitter
-                            <svg class="bi me-2" width="30" height="25">
-                                <use xlink:href="#twitter" />
-                            </svg>
-                        </a></li>
+                    <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Twitter</a></li>
                     <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Facebook</a></li>
                     <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Youtube</a></li>
                     <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
