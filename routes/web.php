@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [ProductController::class, 'Welcome'])
+    ->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -26,3 +28,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get(
+    '/product/{product}',
+    [ProductController::class, 'show']
+)->name('product.show');

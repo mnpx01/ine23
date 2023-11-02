@@ -17,7 +17,7 @@
             <a class="icon-link" href="#"> Autenticación </a>
         </div>
         <div class="col-sm-1" style="padding-left: 120px;">
-            <img src="img/shoppingcart.png" style="width: 50px; height: 50px;">
+            <img src="/img/shoppingcart.png" style="width: 50px; height: 50px;">
         </div>
 
     </nav>

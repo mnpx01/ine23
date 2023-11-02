@@ -12,71 +12,42 @@
         <div class="col-sm-9">
             <h3 style="margin-top: 20px;"> Ofertas del día </h3>
             <div class="row">
+                @foreach ($aProduct_offering as $producto)
                 <div class="col-sm-2 card card-body" id="cards">
-                    <a href="#"><img class="card-img-top" src="img/Brazalete.jpg"></a>
+                    <a href="product/{{$producto->id}}"><img class="card-img-top" src="{{$producto->imgUrl}}"></a>
                     <div class="card-body">
-                        <h4 class="card-title">Brazalete</h4>
-                        <p class="card-subtitle">Brazalete oficial de capitán.<br><br></p>
-                        <p class="card-text" style="text-decoration: line-through;">Antes: 5.50€</p>
-                        <p class="card-text">Ahora: 3.50€</p>
+                        <h4 class="card-title"> {{$producto->name}} </h4>
+                        <p class="card-subtitle"> {{$producto->description}} <br><br></p>
+
+                        @if ($producto->discountPercent > 0)
+                        <p class="card-text" style="text-decoration: line-through;">{{"Antes: " . $producto->price . "€"}} </p>
+                        <p class="card-text"> {{" Ahora: " . ($producto->price - ($producto->price * $producto->discountPercent) . "€")}} </p>
+                        @else
+                        <p class="card-text"> {{ "Ahora:" .  $producto->price }} </p>
+                        @endif
                     </div>
                 </div>
-                <div class="col-sm-2 card card-body" id="cards">
-                    <a href="#"><img class="card-img-top" src="img/Spray.jpg"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Spray Árbitro</h4>
-                        <p class="card-subtitle">Spray que respeta el crecimiento del césped natural.<br><br></p>
-                        <p class="card-text" style="text-decoration: line-through;">Antes: 10.80€</p>
-                        <p class="card-text">Ahora: 6.40€</p>
-                    </div>
-                </div>
-                <div class="col-sm-2 card card-body" id="cards">
-                    <a href="#"><img class="card-img-top" src="img/Toalla.jpg"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Toalla</h4>
-                        <p class="card-subtitle">Toalla de viaje, para cada fin de semana.<br><br></p>
-                        <p class="card-text" style="text-decoration: line-through;">Antes: 15.00€</p>
-                        <p class="card-text">Ahora: 12.00€</p>
-                    </div>
-                </div>
-                <div class="col-sm-2 card card-body" id="cards">
-                    <a href="#"><img class="card-img-top" src="img/Tarjetas.jpg"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Pack Tarjetas</h4>
-                        <p class="card-subtitle">Tarjetas personalizadas para amonestar y expulsar
-                            a jugadores infractores.<br><br></p>
-                        <p class="card-text" style="text-decoration: line-through;">Antes: 7.60€</p>
-                        <p class="card-text">Ahora: 3.80€</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <h4 style="margin-top: 20px;"> Nuevos productos </h4>
             <div class="row">
+                @foreach ($aProduct_new as $producto)
                 <div class="col-sm-2 card card-body" id="cards">
-                    <a href="#"><img class="card-img-top" src="img/BalonAdidas.jpg"></a>
+                    <a href="product/{{$producto->id}}"><img class="card-img-top" src="{{$producto->imgUrl}}"></a>
                     <div class="card-body">
-                        <h5 class="card-title">Balón Adidas</h5>
-                        <p class="card-subtitle">Balón de fútbol 11 Adidas.<br><br></p>
-                        <p class="card-text">24.00€</p>
+                        <h4 class="card-title"> {{$producto->name}} </h4>
+                        <p class="card-subtitle"> {{$producto->description}} <br><br></p>
+
+                        @if ($producto->discountPercent > 0)
+                        <p class="card-text" style="text-decoration: line-through;">{{"Antes: " . $producto->price . "€"}} </p>
+                        <p class="card-text"> {{" Ahora: " . ($producto->price - ($producto->price * $producto->discountPercent) . "€")}} </p>
+                        @else
+                        <p class="card-text"> {{ "Precio:" .  $producto->price }} </p>
+                        @endif
                     </div>
                 </div>
-                <div class="col-sm-2 card card-body" id="cards">
-                    <a href="#"><img class="card-img-top" src="img/banderinesi.jpg"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Banderines</h4>
-                        <p class="card-subtitle">Banderines para árbitros asistentes.<br><br></p>
-                        <p class="card-text">40.00€</p>
-                    </div>
-                </div>
-                <div class="col-sm-2 card card-body" id="cards">
-                    <a href="#"><img class="card-img-top" src="img/Bidon.jpg"></a>
-                    <div class="card-body">
-                        <h4 class="card-title">Bidón</h4>
-                        <p class="card-subtitle">Bidón Nike para sesiones de alta intensidad.<br><br></p>
-                        <p class="card-text">13.70€</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         @endsection
