@@ -33,3 +33,31 @@ Route::get(
     '/product/{product}',
     [ProductController::class, 'show']
 )->name('product.show');
+
+Route::get(
+    '/addToCart/{product}',
+    [
+        ProductController::class,
+        'addToCart'
+    ]
+)->name('cart.add');
+
+Route::get(
+    '/cart',
+    [CartController::class, 'show']
+)->name('cart.show');
+
+Route::get(
+    '/cart/remove/{product}',
+    [CartController::class, 'remove']
+)->name('cart.remove');
+
+Route::get(
+    '/cart/removeAll/{product}',
+    [CartController::class, 'removeAll']
+)->name('cart.removeAll');
+
+Route::get(
+    '/cart/{operation}/{product}',
+    [CartController::class, 'operate']
+)->name('cart.operate');

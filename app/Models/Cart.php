@@ -56,7 +56,7 @@ class Cart extends Model
     {
         if (array_key_exists($product->id, $this->htItem)) {
             $this->iTotalItems -= $this->htItem[$product->id]['quantity'];
-            $this->dTotalPrice -= $this->htItem[$product->id]['quantity'] * $product->price;
+            $this->dTotalPrice -= ($this->htItem[$product->id]['quantity'] * $product->price);
             unset($this->htItem[$product->id]);
         }
     }
