@@ -13,11 +13,16 @@
             </form>
         </div>
 
-        <div class="col-sm-3"></div>
+        <div class="col-sm-2"></div>
 
 
-        <div class="col-sm-1">
-            <a class="icon-link" href="#"> Autenticación </a>
+        <div class="col-sm-1" style="padding-right: 350px;">
+            @if(Auth::check())
+            <a class="icon-link" href="{{ route('dashboard') }}"> {{ Auth::user()->name }} </a>
+            <a class="icon-link" href="{{ route('logout') }}"> <img src="/img/exitdoor.png" style="width: 40px; height: 40px;" /> </a>
+            @else
+            <a class="icon-link" href="{{ route('login') }}"> Autenticación </a>
+            @endif
         </div>
         <div class="col-sm-1">
             <a href="{{ route('cart.show') }}">
@@ -26,10 +31,8 @@
         </div>
         <div class="col-sm-1" style="font-size: 30px; font-weight: 600;">
             <?php if (session()->has('cart') && session()->get('cart')->iTotalItems > 0) {
-                echo session()->get('cart')->iTotalItems; //PROBLEMA CARRITO NUM NEGATIVO ELEMENTOS
+                echo session()->get('cart')->iTotalItems;
             } ?>
         </div>
-
-
     </nav>
 </header>

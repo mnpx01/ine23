@@ -61,3 +61,8 @@ Route::get(
     '/cart/{operation}/{product}',
     [CartController::class, 'operate']
 )->name('cart.operate');
+
+Route::get(
+    '/user/logout',
+    [UserController::class, 'logout']
+)->name('logout');
