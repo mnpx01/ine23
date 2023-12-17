@@ -1,7 +1,17 @@
+<?php
+
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+?>
+
 @extends('templates.master')
 
 <body>
     @section('content-center')
+    @foreach ($errors->all() as $sError)
+    <div class="alert alert-warning">{{ $sError }}</div>
+    @endforeach
+
     <div class="col-sm-4 card card-body" id="cards">
         <img class="card-img-top" src="/{{$product->imgUrl}}">
         <div class="card-body">
@@ -15,7 +25,10 @@
                 @else
                 <p class="card-text"> {{ "Precio:" .  $product->price }} </p>
                 @endif
-                <a href="{{ route('cart.add', $product->id) }}" class="btn btn-primary"> Añadir al carrito </a>
+                @if (Auth::user() && User::isEditor(Auth::user()))
+                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary"> Editar </a>
+                @endif
+                <a href="{{ route('cart.add', $product->id) }}" class="btn btn-primary" style="margin-top: 10px;"> Añadir al carrito </a>
         </div>
     </div>
     @endsection

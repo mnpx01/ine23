@@ -18,7 +18,7 @@
 
         <div class="col-sm-1" style="padding-right: 350px;">
             @if(Auth::check())
-            <a class="icon-link" href="{{ route('dashboard') }}"> {{ Auth::user()->name }} </a>
+            <a class="icon-link" href="{{ route('user.edit') }}"> {{ Auth::user()->name }} </a>
             <a class="icon-link" href="{{ route('logout') }}"> <img src="/img/exitdoor.png" style="width: 40px; height: 40px;" /> </a>
             @else
             <a class="icon-link" href="{{ route('login') }}"> Autenticación </a>

@@ -28,4 +28,9 @@ return [
     'Log in' => 'Iniciar sesión',
     'Remember me' => 'Recuérdame',
     'Forgot your password?' => '¿Olvidaste tu contraseña?',
+    'Old password' => 'Contraseña antigua',
+    'New password' => 'Contraseña nueva',
+    'Repeat password' => 'Repetir contraseña',
+    'Save' => 'Guardar',
+    'Description' => 'Descripción',
 ];

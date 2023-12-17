@@ -34,4 +34,19 @@ class ProductController extends Controller
         return redirect()->route('product.show', compact('product'))
             ->with('success', 'Producto añadido al carrito con éxito.');
     }
+
+    public function update(Product $product, Request $request)
+    {
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->save();
+
+        return redirect()->route('product.show', compact('product'))
+            ->with('success', 'Producto actualizado con éxito.');
+    }
+
+    public function edit(Product $product)
+    {
+        return view('product.edit', compact('product'));
+    }
 }

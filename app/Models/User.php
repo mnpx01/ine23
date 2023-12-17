@@ -58,4 +58,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    static function isEditor(User $user): bool
+    {
+        $teamAdmin = Team::where('name', 'administradores')->first();
+        return ($user && $user->hasTeamRole($teamAdmin, 'editor'));
+    }
 }

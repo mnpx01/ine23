@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,3 +67,23 @@ Route::get(
     '/user/logout',
     [UserController::class, 'logout']
 )->name('logout');
+
+Route::get(
+    '/user/edit',
+    [UserController::class, 'edit']
+)->name('user.edit');
+
+Route::patch(
+    '/user/update',
+    [UserController::class, 'update']
+)->name('user.update');
+
+Route::patch(
+    '/product/{product}',
+    [ProductController::class, 'update']
+)->name('product.update')->middleware('role.editor');
+
+Route::get(
+    '/product/edit/{product}',
+    [ProductController::class, 'edit']
+)->name('product.edit')->middleware('role.editor');
